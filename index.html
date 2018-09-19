@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/less.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+</head>
+
+
+
+<body>
+    <div class="box">
+        <ul>
+            <li href="javascript:void(0)" class="closebtn">&times;</li>
+
+            <li>Sidebar</li>
+            <li>Sidebar</li>
+            <li>Location</li>
+            <li>Study</li>
+            <li>Collections</li>
+            <li>Credits</li>
+        </ul>
+        <div class="shadow"></div>
+    </div>
+    <span style="font-size:30px;cursor:pointer" id="open">&#9776; 打开</span>
+
+
+    <script>
+        $(".closebtn").click(function() {
+            $(".box").css({
+                "width": "0px",
+            })
+            $("li").css("display", "none");
+
+        });
+        $("#open").click(function() {
+            $(".box").css({
+                "width": "300px",
+            })
+            $("li").css("display", "block");
+
+        })
+    </script>
+</body>
+
+</html>
