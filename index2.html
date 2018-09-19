@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+</head>
+<style>
+    body {
+        background: gray;
+    }
+    
+    .box {
+        width: 300px;
+        height: 100%;
+        background: #48A770;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .3s;
+    }
+    
+    .box ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    
+    .box ul li {
+        border-bottom: 1px solid white;
+        display: block;
+        padding: 20px;
+        color: black;
+    }
+    
+    .box ul li:hover {
+        color: white;
+    }
+</style>
+
+<body>
+
+
+    <div class="box">
+        <ul>
+            <li href="javascript:void(0)" class="closebtn">&times;</li>
+
+            <li>Sidebar</li>
+            <li>Sidebar</li>
+            <li>Location</li>
+            <li>Study</li>
+            <li>Collections</li>
+            <li>Credits</li>
+        </ul>
+        <!-- <div class="shadow"></div> -->
+    </div>
+    <script>
+        $(".closebtn").click(function() {
+            $(".box").css({
+                "width": "0px",
+                ""
+            })
+            $("li").css("display", "none");
+
+        });
+    </script>
+</body>
+
+</html>
