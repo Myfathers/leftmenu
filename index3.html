@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+</head>
+<style>
+    body {
+        background: gray;
+        /* position: relative; */
+        margin: 0;
+    }
+    
+    .bigbox {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .bigbox .leftbox {
+        width: 300px;
+        height: 100%;
+        background: #48A770;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .3s;
+    }
+    
+    .bigbox .leftbox ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    
+    .bigbox .leftbox ul li {
+        border-bottom: 1px solid white;
+        display: block;
+        padding: 20px;
+        color: black;
+        transition: all .3s;
+    }
+    
+    .bigbox .leftbox ul li:hover {
+        color: white;
+    }
+    
+    .bigbox .rightbox {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 1230px;
+        height: 100%;
+        background: wheat;
+        left: 301px;
+        transition: all .5s;
+    }
+    
+    .smallbox {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, .3);
+        visibility: hidden;
+    }
+</style>
+
+<body>
+    <div class="bigbox">
+        <div class="leftbox">
+            <ul>
+                <li href="javascript:void(0)" class="closebtn">&times;</li>
+
+                <li>Sidebar</li>
+                <li>Sidebar</li>
+                <li>Location</li>
+                <li>Study</li>
+                <li>Collections</li>
+                <li>Credits</li>
+            </ul>
+        </div>
+        <diV class="rightbox">
+            <button style="font-size:30px;cursor:pointer" id="open">&#9776; 打开</button>
+
+        </diV>
+    </div>
+    <div class="smallbox"></div>
+    <script>
+        $(".closebtn").click(function() {
+
+            $(".leftbox").css({
+                "width": "0px",
+                "transform": "rotateY(-90deg)",
+            })
+            $("li").css("display", "none");
+            $(".rightbox").css({
+                "transform": "scale(.8)",
+                // "z-index": 1,
+
+            })
+            $(".smallbox").css({
+                "visibility": "visible",
+            })
+
+
+        });
+        $(".smallbox").click(function() {
+            $(".leftbox").css({
+                "width": "300px",
+                "transform": "rotateY(0deg)",
+
+
+            })
+            $("li").css("display", "block");
+            $(".rightbox").css({
+                "transform": "scale(1)",
+
+
+            })
+            $(this).css({
+                "visibility": "hidden",
+            })
+
+
+
+        });
+    </script>
+</body>
+
+</html>
